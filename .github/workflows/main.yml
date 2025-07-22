@@ -21,12 +21,9 @@ jobs:
     - name: Install Node.js dependencies
       run: |
         whoami
+        pwd
         npm install
-
-    - name: Run Node.js App
-      run: |
-        cd node-app
-        nohup npm start &
+        node index.js
         sleep 5
         curl http://localhost:3000
 
