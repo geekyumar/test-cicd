@@ -1,0 +1,32 @@
+name: Run Node and Python Apps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-apps:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Node.js dependencies
+      run: |
+        whoami
+        npm install
+
+    - name: Run Node.js App
+      run: |
+        cd node-app
+        nohup npm start &
+        sleep 5
+        curl http://localhost:3000
+
