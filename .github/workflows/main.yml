@@ -22,6 +22,7 @@ jobs:
       run: |
         whoami
         pwd
+        git pull
         npm install
         sudo node index.js > node.log 2>&1 &
         echo "Pipeline Successful!"
