@@ -23,7 +23,7 @@ jobs:
         whoami
         pwd
         npm install
-        sudo node index.js
+        sudo node index.js > node.log 2>&1 &
         sleep 5
         curl http://localhost:3000
 
